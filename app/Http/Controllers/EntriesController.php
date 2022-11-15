@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entry;
 use Illuminate\Http\Request;
 
 class EntriesController extends Controller
@@ -13,7 +14,10 @@ class EntriesController extends Controller
      */
     public function index()
     {
-        //
+        $entry = Entry::all();
+        return response()->json([
+            $entry, 200
+        ]);
     }
 
     /**
